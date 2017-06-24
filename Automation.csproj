@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{42028748-EAE4-4D01-B233-2ABA31DB6BBD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Automation</RootNamespace>
+    <AssemblyName>Automation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AE.Net.Mail, Version=1.7.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AE.Net.Mail.1.7.10.0\lib\net45\AE.Net.Mail.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="appium-dotnet-driver">
+      <HintPath>..\packages\Appium.WebDriver.1.2.0.8\lib\net40\appium-dotnet-driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=2.53.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.2.53.0\lib\net40\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>..\packages\Selenium.Support.2.44.0\lib\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\Assertions.cs" />
+    <Compile Include="Context\FeaturesPage.cs" />
+    <Compile Include="Context\Footer.cs" />
+    <Compile Include="Context\Header.cs" />
+    <Compile Include="Context\Homepage.cs" />
+    <Compile Include="Context\MicrositePage.cs" />
+    <Compile Include="Context\MobileMenu.cs" />
+    <Compile Include="Context\OurEthicsPage.cs" />
+    <Compile Include="Context\OurStoresPage.cs" />
+    <Compile Include="Context\OutfitBuilder.cs" />
+    <Compile Include="Context\PrimaniaPage.cs" />
+    <Compile Include="Context\ProductsPage.cs" />
+    <Compile Include="Context\ProfilePage.cs" />
+    <Compile Include="Context\QuizPage.cs" />
+    <Compile Include="Context\Search.cs" />
+    <Compile Include="Context\SignInSignUpPage.cs" />
+    <Compile Include="Tests Desktop\T011_Microsite.cs" />
+    <Compile Include="Tests Desktop\T010_Footer.cs" />
+    <Compile Include="Tests Desktop\T012_Quizes.cs" />
+    <Compile Include="Tests Desktop\T014_ErrorFinders.cs" />
+    <Compile Include="Tests Desktop\T013_OutfitBuilder.cs" />
+    <Compile Include="Tests Desktop\T015_URIScanners.cs" />
+    <Compile Include="Tests Mobile\M000_TestSetup.cs" />
+    <Compile Include="Tests Mobile\M001_SignInUp.cs" />
+    <Compile Include="Tests Mobile\M002_MyProfile.cs" />
+    <Compile Include="Tests Mobile\M003_Products.cs" />
+    <Compile Include="Tests Mobile\M004_Primania_regression.cs" />
+    <Compile Include="Tests Mobile\M005_OurStores.cs" />
+    <Compile Include="Tests Mobile\M006_OurEthics.cs" />
+    <Compile Include="Tests Mobile\M007_Search.cs" />
+    <Compile Include="Tests Mobile\M008_Homepage.cs" />
+    <Compile Include="Tests Mobile\M009_Features.cs" />
+    <Compile Include="Tests Mobile\Mxxx_Template.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="driverExt.cs" />
+    <Compile Include="Tests Desktop\T004_Primania_regression.cs" />
+    <Compile Include="Tests Desktop\T003_Products.cs" />
+    <Compile Include="Tests Desktop\T005_OurStores.cs" />
+    <Compile Include="Tests Desktop\T001_SignInUp.cs" />
+    <Compile Include="Tests Desktop\T000_TestSetup.cs" />
+    <Compile Include="Tests Desktop\T002_MyProfile.cs" />
+    <Compile Include="Tests Desktop\T006_OurEthics.cs" />
+    <Compile Include="Tests Desktop\T007_Search.cs" />
+    <Compile Include="Tests Desktop\T008_Homepage.cs" />
+    <Compile Include="Tests Desktop\T009_Features.cs" />
+    <Compile Include="Tests Desktop\Txxx_Template.cs" />
+    <Compile Include="Users.cs" />
+    <Compile Include="WebdriverBaseClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Automation.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\avatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\contactUsTestedURIs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CUandSFResults\ContactUs\ContactUsURIs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CUandSFResults\ContactUs\FaqURIs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CUandSFResults\ContactUs\NotContactUsNorFaqNorWhoops.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CUandSFResults\Suppliers\NotSuppliersNorWhoops.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CUandSFResults\Suppliers\SuppliersURIs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CUandSFResults\ContactUs\WhoopsURIs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CUandSFResults\Suppliers\WhoopsURIsSuppliers.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\JSandGATestedURIs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\redirectFrom.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\redirectTo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\suppliersTestedURIs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\testLook.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\UploadTest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
